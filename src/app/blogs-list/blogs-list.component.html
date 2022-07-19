@@ -1,1 +1,7 @@
-<p>blogs-list works!</p>
+<h2>Sort by</h2>
+<ul>
+    <li *ngFor="let post of posts" >
+        {{post.title}}
+    </li>
+</ul>
+<input type="text" name="search" id="">

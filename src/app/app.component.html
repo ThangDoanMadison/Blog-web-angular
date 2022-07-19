@@ -1,22 +1,4 @@
-<a href="#">Blog list</a>
-<app-blogs-list></app-blogs-list>
-<a href="#">Add Blog</a>
-Sort by 
-<select id="">
-  <option value="title">Title</option>
-  <option value="title">Content</option>
-  <option value="title">Create at</option>
-  <option value="title">Update at</option>
-</select>
-<input type="search" name="viewport" id="">
-<div class="pagination" id="pagination">
-  <a href="#">&laquo;</a>
-  <a href="#">1</a>
-  <a href="#">2</a>
-  <a href="#" class="active">3</a>
-  <a href="#">4</a>
-  <a href="#">5</a>
-  <a href="#">6</a>
-  <a href="#">7</a>
-  <a href="#">&laquo;</a>
-</div>
+<a [routerLink]="['/blogs-list']" routerLinkActive="router-link-active">Blogs List</a>
+|
+<a [routerLink]="['/add-blog']" routerLinkActive="router-link-active">Add Blog</a>
+<router-outlet></router-outlet>
