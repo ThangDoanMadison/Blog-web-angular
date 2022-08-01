@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ConfigService } from '../config/config.service';
+import { BlogService } from '../blog.service';
+import { Blog } from '../models/blog.model'
 
 @Component({
   selector: 'app-blogs-list',
@@ -7,13 +8,20 @@ import { ConfigService } from '../config/config.service';
   styleUrls: ['./blogs-list.component.scss']
 })
 export class BlogsListComponent implements OnInit {
-  posts:any;
+  datas:Blog[]=[];
+
   constructor(
-    private configService:ConfigService
+    private blogService: BlogService
   ) { }
 
   ngOnInit(): void {
-   this.configService.getData().then(res=>console.log(res))
+    this.getAll();
   }
 
+  getAll(){
+    this.blogService.getAll().subscribe((res:any)=>{
+      console.log(res)
+      this.datas = res
+    })
+  }
 }

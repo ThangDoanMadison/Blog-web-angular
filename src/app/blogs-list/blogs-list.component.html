@@ -1,7 +1,13 @@
 <h2>Sort by</h2>
-<ul>
-    <li *ngFor="let post of posts" >
-        {{post.title}}
-    </li>
-</ul>
 <input type="text" name="search" id="">
+<div id="1" class="item new col-md-4" *ngFor="let item of datas">
+    <a href="detail/{{item.id}}">
+      <div class="featured-item">
+        <img src="{{item.img}}">
+        <h4>{{item.title}}</h4>
+        <h4>{{item.id}}</h4>
+        <h6>${{item.description}}</h6>
+      </div>
+    </a>
+  </div>
+
