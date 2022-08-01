@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
+import {LayoutModule} from '@angular/cdk/layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +22,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { DefaultComponent } from './admin/default/default.component';
 import { SidebarComponent } from './admin/shared/sidebar/sidebar.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
-import { PostsComponent } from './admin/dashboard/posts/posts.component';
+import { PostCreateComponent } from './admin/dashboard/posts/post-create/post-create.component';
+import { MatInputModule } from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
 
 
 const Ux_Modules = [
@@ -30,6 +33,9 @@ const Ux_Modules = [
   MatSidenavModule,
   MatIconModule,
   MatToolbarModule,
+  LayoutModule,
+  MatInputModule,
+  MatCardModule
 ]
 
 @NgModule({
@@ -42,7 +48,7 @@ const Ux_Modules = [
     DefaultComponent,
     SidebarComponent,
     DashboardComponent,
-    PostsComponent,
+    PostCreateComponent,
   ],
   imports: [
     BrowserModule,

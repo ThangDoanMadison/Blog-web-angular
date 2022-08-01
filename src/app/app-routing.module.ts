@@ -6,16 +6,21 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { DetailComponent } from './detail/detail.component';
 import { DefaultComponent } from './admin/default/default.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
-import { PostsComponent } from './admin/dashboard/posts/posts.component';
+import { PostCreateComponent } from './admin/dashboard/posts/post-create/post-create.component';
 const routes: Routes = [
-  { path: '', component: DefaultComponent },
-  { path: 'add-blog', component: AddBlogComponent },
-  { path: 'blogs-list', component: BlogsListComponent },
-  { path: 'detail/:id ', component: DetailComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'posts', component: PostsComponent },
-  { path: '**', component: PageNotFoundComponent },
+  {
+    path: '', component: DefaultComponent,
+    children: [
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'posts', component: PostCreateComponent },
+    ],
+  },
 ];
+//   { path: 'add-blog', component: AddBlogComponent },
+//   { path: 'blogs-list', component: BlogsListComponent },
+//   { path: 'detail/:id ', component: DetailComponent },
+//   { path: '**', component: PageNotFoundComponent },
+// ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
